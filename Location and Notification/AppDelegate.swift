@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-//  Getting permission to use notifications
+    //  Getting permission to use notifications
     func requestAutorization() {
         notificationCenter.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             print ("Permission granted: \(granted)")
@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Notification settings: \(settings)")
         }
     }
-//    Creating notification
+    //    Creating notification
     func createNotification(isEnter: Bool){
         let content = UNMutableNotificationContent()
         content.title = "Phone sound"
@@ -63,11 +63,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
-        
+        //        The second way to create notifications when entering / leaving a region
         //        let center = CLLocationCoordinate2D(latitude: 37.335400, longitude: -122.009201)
         //        let region = CLCircularRegion(center: center, radius: 2000.0, identifier: "Headquarters")
         //        region.notifyOnEntry = true
-        //        region.notifyOnExit = false
+        //        region.notifyOnExit = true
         //        let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
